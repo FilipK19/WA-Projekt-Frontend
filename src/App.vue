@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <!--<router-link to="/">Home</router-link> |
       <router-link to="/store">Store</router-link> |
-      <router-link to="/profile">Profile</router-link>
+      <router-link to="/profile">Profile</router-link>-->
+      <v-toolbar dark prominent src="./assets/bar.png"> </v-toolbar>
     </div>
     <router-view />
   </div>
@@ -21,6 +22,12 @@ export default {
 
 <style lang="scss">
 #app {
+  background-image: url(./assets/backg.png);
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

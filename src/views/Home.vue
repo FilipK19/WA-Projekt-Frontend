@@ -5,9 +5,8 @@
         <v-col>
           <v-btn width="344" height="300">
             <router-link to="/profile">
-              <v-card width="344" height="300">
+              <v-card width="344" height="300" color="#98FB98">
                 <v-img height="250" src="../assets/profile.svg"></v-img>
-                <p class="text-center">Profile</p>
                 <v-list-item-subtitle>Your profile</v-list-item-subtitle>
               </v-card>
             </router-link>
@@ -16,7 +15,7 @@
         <v-col>
           <v-btn width="344" height="300">
             <router-link to="/store">
-              <v-card width="344" height="300">
+              <v-card width="344" height="300" color="#98FB98">
                 <v-img height="250" src="../assets/store.svg"></v-img>
                 <v-list-item-subtitle>Buy stuff</v-list-item-subtitle>
               </v-card>
@@ -26,7 +25,7 @@
         <v-col>
           <v-btn width="344" height="300">
             <router-link to="/store">
-              <v-card width="344" height="300">
+              <v-card width="344" height="300" color="#98FB98">
                 <v-img height="250" src="../assets/fish.svg"></v-img>
                 <v-list-item-subtitle>Your fish</v-list-item-subtitle>
               </v-card>
