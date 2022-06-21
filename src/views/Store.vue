@@ -4,7 +4,7 @@
       <v-row no-gutters>
         <v-col>
           <v-btn rounded width="350" height="300" color="#98FB98">
-            <router-link to="/profile">
+            <router-link to="/">
               <v-img
                 height="225px"
                 width="270px"
@@ -16,7 +16,7 @@
         </v-col>
         <v-col>
           <v-btn rounded width="350" height="300" color="#98FB98">
-            <router-link to="/profile">
+            <router-link to="/">
               <v-img
                 height="225px"
                 width="260px"
