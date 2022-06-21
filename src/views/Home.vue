@@ -3,32 +3,44 @@
     <v-container class="grey lighten-5">
       <v-row no-gutters>
         <v-col>
-          <v-btn width="344" height="300">
+          <v-btn rounded width="344" height="300" color="#98FB98">
             <router-link to="/profile">
-              <v-card width="344" height="300" color="#98FB98">
-                <v-img height="250" src="../assets/profile.svg"></v-img>
-                <v-list-item-subtitle>Your profile</v-list-item-subtitle>
-              </v-card>
+              <v-img
+                height="225px"
+                width="300px"
+                src="../assets/profile.svg"
+              ></v-img>
+              <v-list-item-subtitle style="color: #228b22"
+                >Your profile</v-list-item-subtitle
+              >
             </router-link>
           </v-btn>
         </v-col>
         <v-col>
-          <v-btn width="344" height="300">
+          <v-btn rounded width="344" height="300" color="#98FB98">
             <router-link to="/store">
-              <v-card width="344" height="300" color="#98FB98">
-                <v-img height="250" src="../assets/store.svg"></v-img>
-                <v-list-item-subtitle>Buy stuff</v-list-item-subtitle>
-              </v-card>
+              <v-img
+                height="225px"
+                width="300px"
+                src="../assets/store.svg"
+              ></v-img>
+              <v-list-item-subtitle style="color: #228b22"
+                >Buy stuff</v-list-item-subtitle
+              >
             </router-link>
           </v-btn>
         </v-col>
         <v-col>
-          <v-btn width="344" height="300">
-            <router-link to="/store">
-              <v-card width="344" height="300" color="#98FB98">
-                <v-img height="250" src="../assets/fish.svg"></v-img>
-                <v-list-item-subtitle>Your fish</v-list-item-subtitle>
-              </v-card>
+          <v-btn rounded width="344" height="300" color="#98FB98">
+            <router-link to="/fish">
+              <v-img
+                height="225px"
+                width="300px"
+                src="../assets/fish.svg"
+              ></v-img>
+              <v-list-item-subtitle style="color: #228b22"
+                >Your fish</v-list-item-subtitle
+              >
             </router-link>
           </v-btn>
         </v-col>
