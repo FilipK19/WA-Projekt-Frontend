@@ -26,8 +26,20 @@ const routes = [
   {
     path: '/fish',
     name: 'Fish',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Fish.vue')
-  }
+    component: () => import(/* webpackChunkName: "about" */ '../views/Fish.vue'),
+    props: true,
+  },
+  {
+    path: '/shop',
+    name: 'Shop',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Shop.vue')
+  },
+  {
+    path: '/fish/fishdetails/:fish',
+    name: 'FishDetails',
+    component: () => import(/* webpackChunkName: "about" */ '../views/FishDetails.vue'),
+    props: true,
+  },
 ]
 
 const router = new VueRouter({

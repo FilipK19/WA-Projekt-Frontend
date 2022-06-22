@@ -13,7 +13,7 @@
               v-for="p in profil"
               v-bind:key="p"
               style="color: #228b22"
-              >{{ p.ime + " " + p.prezime }}</v-list-item-subtitle
+              >{{ p.podaci.ime + " " + p.podaci.prezime }}</v-list-item-subtitle
             >
           </v-card>
         </v-col>

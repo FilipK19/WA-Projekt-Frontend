@@ -4,7 +4,7 @@
       <v-row no-gutters>
         <v-col>
           <v-btn rounded width="350" height="300" color="#98FB98">
-            <router-link to="/">
+            <router-link to="/shop">
               <v-img
                 height="225px"
                 width="270px"
