@@ -1,6 +1,10 @@
 <template>
   <div class="fish">
     <h1>Detalji Commita</h1>
+
+    <h2 v-for="f in fishData" v-bind:key="f">
+      <h3 v-if="fish == f.vrsta">{{ f }}</h3>
+    </h2>
   </div>
 </template>
 
@@ -17,6 +21,7 @@ export default {
   data() {
     return {
       fishData: [],
+      fishyo: "",
     };
   },
 };
