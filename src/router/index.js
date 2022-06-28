@@ -40,6 +40,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/FishDetails.vue'),
     props: true,
   },
+  {
+    path: '/fish/fishcategory',
+    name: 'Category',
+    component: () => import(/* webpackChunkName: "about" */ '../views/FishCategory.vue'),
+  },
 ]
 
 const router = new VueRouter({

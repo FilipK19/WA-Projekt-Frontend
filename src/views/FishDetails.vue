@@ -1,5 +1,6 @@
 <template>
   <div class="fish">
+    {{ fishData }}
     <h2 v-for="f in fishData" v-bind:key="f">
       <h2 v-if="fish == f.vrsta">
         {{ f.vrsta + " " + f.voda }} {{ (i = i + 1) }}
@@ -21,7 +22,7 @@ export default {
   name: "FishDetails",
   props: ["fish"],
   async mounted() {
-    let response = await fetch("http://localhost:3000/fish");
+    let response = await fetch("http://localhost:3000/test");
     console.log(response);
     let data = await response.json();
     this.fishData = data;
