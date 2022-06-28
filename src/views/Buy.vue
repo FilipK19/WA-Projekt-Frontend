@@ -4,42 +4,72 @@
     <v-container>
       <v-row>
         <v-col>
-          <v-btn width="800" height="200" color="#98FB98">
-            <h4 v-if="item == stvar">
-              <v-img
-                height="200px"
-                width="235px"
-                src="../shop/Sougayilang.jpg"
-              ></v-img>
-              <h1>Sougayilang</h1>
-              <v-btn @click="select(), createPost()">Purchase</v-btn>
-            </h4>
-          </v-btn>
+          <v-card width="800" height="200" color="#98FB98">
+            <v-row>
+              <h4 v-if="item == stvar">
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/Sougayilang.jpg"
+                ></v-img>
+              </h4>
+              <v-card-title>Sougayilang</v-card-title>
+              <v-card-actions>
+                <v-btn @click="select(), createPost()">Purchase</v-btn>
+              </v-card-actions>
+            </v-row>
+          </v-card>
         </v-col>
         <v-col>
-          <v-btn width="800" height="200" color="#98FB98">
-            <v-img height="200px" width="335px" src="../shop/RAD.jpeg"></v-img>
-            <h1>RAD</h1>
-            <v-btn @click="select2(), createPost()">Purchase</v-btn>
-          </v-btn>
+          <v-card width="800" height="200" color="#98FB98">
+            <v-row>
+              <h4 v-if="item == stvar">
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/RAD.jpeg"
+                ></v-img>
+              </h4>
+              <v-card-title>RAD</v-card-title>
+              <v-card-actions>
+                <v-btn @click="selec2t(), createPost()">Purchase</v-btn>
+              </v-card-actions>
+            </v-row>
+          </v-card>
         </v-col>
         <v-col>
-          <v-btn width="800" height="200" color="#98FB98">
-            <v-img
-              height="200px"
-              width="335px"
-              src="../shop/PLUSINNO.jpg"
-            ></v-img>
-            <h1>PLUSINNO</h1>
-            <v-btn @click="select3(), createPost()">Purchase</v-btn>
-          </v-btn>
+          <v-card width="800" height="200" color="#98FB98">
+            <v-row>
+              <h4 v-if="item == stvar">
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/PLUSINNO.jpg"
+                ></v-img>
+              </h4>
+              <v-card-title>PLUSINNO</v-card-title>
+              <v-card-actions>
+                <v-btn @click="select3(), createPost()">Purchase</v-btn>
+              </v-card-actions>
+            </v-row>
+          </v-card>
         </v-col>
         <v-col>
-          <v-btn width="800" height="200" color="#98FB98">
-            <v-img height="200px" width="335px" src="../shop/Zebco.png"></v-img>
-            <h1>Zebco</h1>
-            <v-btn @click="select4(), createPost()">Purchase</v-btn>
-          </v-btn>
+          <v-card width="800" height="200" color="#98FB98">
+            <v-row>
+              <h4 v-if="item == stvar">
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/Zebco.png"
+                ></v-img>
+              </h4>
+              <v-card-title>Zebco</v-card-title>
+              <v-card-actions>
+                <v-btn @click="select3(), createPost()">Purchase</v-btn>
+              </v-card-actions>
+            </v-row>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
