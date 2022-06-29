@@ -5,8 +5,8 @@
       <v-row>
         <v-col>
           <v-card width="800" height="200" color="#98FB98">
-            <v-row>
-              <h4 v-if="item == stvar">
+            <v-row v-if="item == stvar">
+              <h4>
                 <v-img
                   height="200px"
                   width="335px"
@@ -18,12 +18,25 @@
                 <v-btn @click="select(), createPost()">Purchase</v-btn>
               </v-card-actions>
             </v-row>
+            <v-row v-if="item == vrsta">
+              <h4>
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/strikepro.png"
+                ></v-img>
+              </h4>
+              <v-card-title>Strike Pro</v-card-title>
+              <v-card-actions>
+                <v-btn @click="select(), buyItem()">Purchase</v-btn>
+              </v-card-actions>
+            </v-row>
           </v-card>
         </v-col>
         <v-col>
           <v-card width="800" height="200" color="#98FB98">
-            <v-row>
-              <h4 v-if="item == stvar">
+            <v-row v-if="item == stvar">
+              <h4>
                 <v-img
                   height="200px"
                   width="335px"
@@ -35,12 +48,25 @@
                 <v-btn @click="selec2t(), createPost()">Purchase</v-btn>
               </v-card-actions>
             </v-row>
+            <v-row v-if="item == vrsta">
+              <h4>
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/firetiger.jpg"
+                ></v-img>
+              </h4>
+              <v-card-title>Firetiger</v-card-title>
+              <v-card-actions>
+                <v-btn @click="select(), createPost()">Purchase</v-btn>
+              </v-card-actions>
+            </v-row>
           </v-card>
         </v-col>
         <v-col>
           <v-card width="800" height="200" color="#98FB98">
-            <v-row>
-              <h4 v-if="item == stvar">
+            <v-row v-if="item == stvar">
+              <h4>
                 <v-img
                   height="200px"
                   width="335px"
@@ -52,12 +78,25 @@
                 <v-btn @click="select3(), createPost()">Purchase</v-btn>
               </v-card-actions>
             </v-row>
+            <v-row v-if="item == vrsta">
+              <h4>
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/astro.jpg"
+                ></v-img>
+              </h4>
+              <v-card-title>Astro</v-card-title>
+              <v-card-actions>
+                <v-btn @click="select(), createPost()">Purchase</v-btn>
+              </v-card-actions>
+            </v-row>
           </v-card>
         </v-col>
         <v-col>
           <v-card width="800" height="200" color="#98FB98">
-            <v-row>
-              <h4 v-if="item == stvar">
+            <v-row v-if="item == stvar">
+              <h4>
                 <v-img
                   height="200px"
                   width="335px"
@@ -67,6 +106,19 @@
               <v-card-title>Zebco</v-card-title>
               <v-card-actions>
                 <v-btn @click="select3(), createPost()">Purchase</v-btn>
+              </v-card-actions>
+            </v-row>
+            <v-row v-if="item == vrsta">
+              <h4>
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/salamander.jpg"
+                ></v-img>
+              </h4>
+              <v-card-title>Salamander</v-card-title>
+              <v-card-actions>
+                <v-btn @click="select(), createPost()">Purchase</v-btn>
               </v-card-actions>
             </v-row>
           </v-card>
@@ -84,8 +136,8 @@ export default {
   data() {
     return {
       stvar: "fishingRod",
-      vrsta: "",
-      cijena: "",
+      vrsta: "fishingBait",
+      cijena: 62,
       status: "",
     };
   },
@@ -124,6 +176,15 @@ export default {
           stvar: this.stvar,
           vrsta: this.vrsta,
           cijena: this.cijena,
+        })
+        .then((response) => console.log(response))
+        .catch((error) => console.log(error));
+      console.log("function called");
+    },
+    buyItem() {
+      axios
+        .patch("http://127.0.0.1:3000/wallet/62bc144506edc3b8727dd025", {
+          stanje: this.cijena,
         })
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
