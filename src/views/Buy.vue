@@ -66,6 +66,23 @@
                 >
               </v-card-actions>
             </v-row>
+            <v-row v-if="item == item3">
+              <h4>
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/outfit.png"
+                ></v-img>
+              </h4>
+              <v-card-title>Outfit</v-card-title>
+              <v-card-title>160 $</v-card-title>
+              <v-card-actions>
+                <v-btn
+                  @click="selectFG(), pay(), buyItem(), refresh(), purchased()"
+                  ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
+                >
+              </v-card-actions>
+            </v-row>
           </v-card>
         </v-col>
         <v-col>
@@ -99,6 +116,23 @@
               <v-card-actions>
                 <v-btn @click="selectB2(), pay(), buyItem(), refresh()"
                   ><h4 @click="refresh()">Purchase</h4></v-btn
+                >
+              </v-card-actions>
+            </v-row>
+            <v-row v-if="item == item3">
+              <h4>
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/backpack.png"
+                ></v-img>
+              </h4>
+              <v-card-title>Backpack</v-card-title>
+              <v-card-title>70 $</v-card-title>
+              <v-card-actions>
+                <v-btn
+                  @click="selectFG2(), pay(), buyItem(), refresh(), purchased()"
+                  ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
                 >
               </v-card-actions>
             </v-row>
@@ -138,6 +172,23 @@
                 >
               </v-card-actions>
             </v-row>
+            <v-row v-if="item == item3">
+              <h4>
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/net.png"
+                ></v-img>
+              </h4>
+              <v-card-title>Fishing Net</v-card-title>
+              <v-card-title>11 $</v-card-title>
+              <v-card-actions>
+                <v-btn
+                  @click="selectFG3(), pay(), buyItem(), refresh(), purchased()"
+                  ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
+                >
+              </v-card-actions>
+            </v-row>
           </v-card>
         </v-col>
         <v-col>
@@ -174,6 +225,23 @@
                 >
               </v-card-actions>
             </v-row>
+            <v-row v-if="item == item3">
+              <h4>
+                <v-img
+                  height="200px"
+                  width="335px"
+                  src="../shop/chair.png"
+                ></v-img>
+              </h4>
+              <v-card-title>Fishing chair</v-card-title>
+              <v-card-title>100 $</v-card-title>
+              <v-card-actions>
+                <v-btn
+                  @click="selectFG4(), pay(), buyItem(), refresh(), purchased()"
+                  ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
+                >
+              </v-card-actions>
+            </v-row>
           </v-card>
         </v-col>
       </v-row>
@@ -191,6 +259,7 @@ export default {
     return {
       item1: "fishingRod",
       item2: "fishingBait",
+      item3: "fishingGear",
       cijena: 0,
       novac: 0,
       wallet: [],
@@ -224,6 +293,19 @@ export default {
     },
     selectFR4() {
       this.cijena = 20;
+    },
+
+    selectFG() {
+      this.cijena = 160;
+    },
+    selectFG2() {
+      this.cijena = 70;
+    },
+    selectFG3() {
+      this.cijena = 11;
+    },
+    selectFG4() {
+      this.cijena = 100;
     },
 
     purchased() {

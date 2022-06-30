@@ -52,6 +52,14 @@
             </v-btn>
           </router-link>
         </v-col>
+        <v-col>
+          <h3 style="color: #228b22">
+            <h2>Fish in database:</h2>
+            <h3 v-for="f in fishData" v-bind:key="f">
+              {{ f.vrsta }}
+            </h3>
+          </h3>
+        </v-col>
       </v-col>
     </v-container>
   </div>
@@ -60,6 +68,12 @@
 <script>
 export default {
   name: "Fish",
+  async mounted() {
+    let response = await fetch("http://localhost:3000/test");
+    console.log(response);
+    let data = await response.json();
+    this.fishData = data;
+  },
   components: {},
 
   data() {
@@ -68,6 +82,7 @@ export default {
       randomNumber: "",
       ranFish: "",
       rand: "Pastrva",
+      fishData: [],
     };
   },
   methods: {
