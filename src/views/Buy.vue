@@ -252,7 +252,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "FishingPost",
+  name: "Buy",
   props: ["item"],
 
   data() {
@@ -339,17 +339,6 @@ export default {
       this.wallet = data;
     },
 
-    createPost() {
-      axios
-        .post("http://127.0.0.1:3000/trgovina/dodaj", {
-          stvar: this.stvar,
-          vrsta: this.vrsta,
-          cijena: this.cijena,
-        })
-        .then((response) => console.log(response))
-        .catch((error) => console.log(error));
-      console.log("function called");
-    },
     buyItem() {
       axios
         .patch("http://127.0.0.1:3000/wallet/62bc144506edc3b8727dd025", {
