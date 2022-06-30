@@ -13,7 +13,9 @@
       </v-col>
       <v-col>
         <v-card width="400" height="25" color="#98FB98">
-          <label for="novac">Amount you want to add: </label>
+          <label style="color: #228b22" for="novac"
+            >Amount you want to add:
+          </label>
           <input type="text" id="novac" v-model="novac" color="#98FB98" />
         </v-card>
       </v-col>
@@ -42,8 +44,9 @@
               <v-card-title>Sougayilang</v-card-title>
               <v-card-title>70 $</v-card-title>
               <v-card-actions>
-                <v-btn @click="selectFR(), pay(), buyItem(), refresh()"
-                  ><h4 @click="refresh()">Purchase</h4></v-btn
+                <v-btn
+                  @click="selectFR(), pay(), buyItem(), refresh(), purchased()"
+                  ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
                 >
               </v-card-actions>
             </v-row>
@@ -193,6 +196,7 @@ export default {
       wallet: [],
       stanje: 0,
       error: "",
+      kupnja: "Purchase",
     };
   },
   methods: {
@@ -222,9 +226,16 @@ export default {
       this.cijena = 20;
     },
 
+    purchased() {
+      if (this.cijena <= this.stanje) {
+        this.kupnja = "Purchased";
+      }
+    },
+
     pay() {
-      if (this.cijena < this.stanje) {
+      if (this.cijena <= this.stanje) {
         this.stanje = this.stanje - this.cijena;
+        this.error = "";
       } else {
         this.error = "Nemate dovoljno novca na računu";
       }
@@ -233,6 +244,7 @@ export default {
     add() {
       if (this.novac > -1000) {
         this.stanje = this.stanje - -this.novac;
+        this.error = "";
       } else {
         this.error = "Upišite pravilan broj";
       }
