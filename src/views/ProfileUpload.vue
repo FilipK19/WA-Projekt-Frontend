@@ -34,8 +34,11 @@
               />
             </div>
             <v-divider class="mx-4"></v-divider>
-            <v-btn rounded color="#00FA9A">Create Post</v-btn>
+            <v-btn @click="createPost()" rounded color="#00FA9A"
+              >Create Post</v-btn
+            >
           </h2>
+          <h2>{{ error }}</h2>
         </form>
       </v-card>
     </v-container>
@@ -53,15 +56,25 @@ export default {
         voda: "",
         lokacija: "",
       },
+      error: "",
     };
   },
   methods: {
     createPost() {
-      axios
-        .post("http://localhost:3000/upecane/ribe", this.formData)
-        .then((response) => console.log(response))
-        .catch((error) => console.log(error));
-      console.log("function called");
+      if (
+        this.formData.vrsta != "" &&
+        this.formData.voda != "" &&
+        this.formData.lokacija != ""
+      ) {
+        axios
+          .post("http://localhost:3000/upecane/ribe", this.formData)
+          .then((response) => console.log(response))
+          .catch((error) => console.log(error));
+        console.log("function called");
+        this.error = "";
+      } else {
+        this.error = "Sva polja moraju biti puna";
+      }
     },
   },
 };
