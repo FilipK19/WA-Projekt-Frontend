@@ -65,7 +65,7 @@ export default {
         vrsta: "",
         voda: "",
         lokacija: "",
-        tezina: "",
+        tezina: 0,
       },
       error: "",
     };
@@ -76,7 +76,7 @@ export default {
         this.formData.vrsta != "" &&
         this.formData.voda != "" &&
         this.formData.lokacija != "" &&
-        this.formData.tezina != ""
+        this.formData.tezina != 0
       ) {
         axios
           .post("http://localhost:3000/upecane/ribe", this.formData)

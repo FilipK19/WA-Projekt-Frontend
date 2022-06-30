@@ -5,14 +5,19 @@
         <v-col>
           <v-card width="344" height="300" color="#98FB98">
             <v-img
-              height="220px"
+              height="250px"
               width="335px"
               src="../assets/profile.svg"
             ></v-img>
-            <h1 v-for="p in profil" v-bind:key="p" style="color: #228b22">
-              {{ p.ime }} {{ p.prezime }}
-            </h1>
+            <h2 style="color: #228b22">Ivan Ivanić</h2>
+            <br />
+            <h4 v-for="u in upecano" v-bind:key="u" style="color: #228b22">
+              {{ i++ }}
+            </h4>
           </v-card>
+          <h2 class="text-left">
+            <h3 style="color: #228b22">Broj upecanih riba: {{ i / 101 }}</h3>
+          </h2>
         </v-col>
         <v-col>
           <router-link :to="'/profile/upload/'">
@@ -48,15 +53,18 @@
 export default {
   name: "Profile",
   async mounted() {
-    let response = await fetch("http://localhost:3000/profil");
+    let response = await fetch("http://localhost:3000/upecane/ribe");
     console.log(response);
     let data = await response.json();
-    this.profil = data;
+    this.upecano = data;
   },
   data() {
     return {
       profil: [],
+      upecano: [],
+      i: 0,
     };
   },
+  methods: {},
 };
 </script>
