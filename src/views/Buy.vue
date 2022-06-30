@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <v-col>
-        <v-card @change="novac" width="300" height="50" color="#98FB98">
+        <v-card width="300" height="50" color="#98FB98" style="color: #228b22">
           <v-card-title>
             <h1 v-for="w in wallet" v-bind:key="w">
               Stanje: {{ (stanje = w.stanje), }}
@@ -23,7 +23,7 @@
           width="150"
           height="25"
           color="#98FB98"
-          >Add money</v-card
+          ><h4 @click="refresh()">Add money</h4></v-card
         >
       </v-col>
     </v-container>
@@ -40,8 +40,11 @@
                 ></v-img>
               </h4>
               <v-card-title>Sougayilang</v-card-title>
+              <v-card-title>70 $</v-card-title>
               <v-card-actions>
-                <v-btn @click="selectFR(), pay(), buyItem()">Purchase</v-btn>
+                <v-btn @click="selectFR(), pay(), buyItem(), refresh()"
+                  ><h4 @click="refresh()">Purchase</h4></v-btn
+                >
               </v-card-actions>
             </v-row>
             <v-row v-if="item == item2">
@@ -53,8 +56,11 @@
                 ></v-img>
               </h4>
               <v-card-title>Strike Pro</v-card-title>
+              <v-card-title>15 $</v-card-title>
               <v-card-actions>
-                <v-btn @click="selectB(), pay(), buyItem()">Purchase</v-btn>
+                <v-btn @click="selectB(), pay(), buyItem(), refresh()"
+                  ><h4 @click="refresh()">Purchase</h4></v-btn
+                >
               </v-card-actions>
             </v-row>
           </v-card>
@@ -70,8 +76,11 @@
                 ></v-img>
               </h4>
               <v-card-title>RAD</v-card-title>
+              <v-card-title>50 $</v-card-title>
               <v-card-actions>
-                <v-btn @click="selectFR2(), pay(), buyItem()">Purchase</v-btn>
+                <v-btn @click="selectFR2(), pay(), buyItem(), refresh()"
+                  ><h4 @click="refresh()">Purchase</h4></v-btn
+                >
               </v-card-actions>
             </v-row>
             <v-row v-if="item == item2">
@@ -83,8 +92,11 @@
                 ></v-img>
               </h4>
               <v-card-title>Firetiger</v-card-title>
+              <v-card-title>10 $</v-card-title>
               <v-card-actions>
-                <v-btn @click="selectB2(), pay(), buyItem()">Purchase</v-btn>
+                <v-btn @click="selectB2(), pay(), buyItem(), refresh()"
+                  ><h4 @click="refresh()">Purchase</h4></v-btn
+                >
               </v-card-actions>
             </v-row>
           </v-card>
@@ -100,8 +112,11 @@
                 ></v-img>
               </h4>
               <v-card-title>PLUSINNO</v-card-title>
+              <v-card-title>40 $</v-card-title>
               <v-card-actions>
-                <v-btn @click="selectFR3(), pay(), buyItem()">Purchase</v-btn>
+                <v-btn @click="selectFR3(), pay(), buyItem(), refresh()"
+                  ><h4 @click="refresh()">Purchase</h4></v-btn
+                >
               </v-card-actions>
             </v-row>
             <v-row v-if="item == item2">
@@ -113,8 +128,11 @@
                 ></v-img>
               </h4>
               <v-card-title>Astro</v-card-title>
+              <v-card-title>7 $</v-card-title>
               <v-card-actions>
-                <v-btn @click="selectB3(), pay(), buyItem()">Purchase</v-btn>
+                <v-btn @click="selectB3(), pay(), buyItem(), refresh()"
+                  ><h4 @click="refresh()">Purchase</h4></v-btn
+                >
               </v-card-actions>
             </v-row>
           </v-card>
@@ -130,8 +148,11 @@
                 ></v-img>
               </h4>
               <v-card-title>Zebco</v-card-title>
+              <v-card-title>20 $</v-card-title>
               <v-card-actions>
-                <v-btn @click="selectFR4(), pay(), buyItem()">Purchase</v-btn>
+                <v-btn @click="selectFR4(), pay(), buyItem(), refresh()"
+                  ><h4 @click="refresh()">Purchase</h4></v-btn
+                >
               </v-card-actions>
             </v-row>
             <v-row v-if="item == item2">
@@ -143,8 +164,11 @@
                 ></v-img>
               </h4>
               <v-card-title>Salamander</v-card-title>
+              <v-card-title>5 $</v-card-title>
               <v-card-actions>
-                <v-btn @click="selectB4(), pay(), buyItem()">Purchase</v-btn>
+                <v-btn @click="selectB4(), pay(), buyItem(), refresh()"
+                  ><h4 @click="refresh()">Purchase</h4></v-btn
+                >
               </v-card-actions>
             </v-row>
           </v-card>
