@@ -1,9 +1,34 @@
 <template>
   <div>
-    <h1 v-for="w in wallet" v-bind:key="w">
-      {{ (nakonkupnje = w.stanje), }}
-    </h1>
-    {{ error }}
+    {{ stanje }}
+    {{ cijena }}
+    <v-container>
+      <v-col>
+        <v-card width="300" height="50" color="#98FB98">
+          <v-card-title>
+            <h1 v-for="w in wallet" v-bind:key="w">
+              Stanje: {{ (stanje = w.stanje), }}
+            </h1>
+            {{ error }}
+          </v-card-title>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card width="300" height="25" color="#98FB98">
+          <label for="cijena">Money: </label>
+          <input type="text" id="cijena" v-model="cijena" color="#98FB98" />
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card
+          @click="pay(), buyItem(), refresh()"
+          width="150"
+          height="25"
+          color="#98FB98"
+          >Add money</v-card
+        >
+      </v-col>
+    </v-container>
     <v-container>
       <v-row>
         <v-col>
@@ -142,13 +167,14 @@ export default {
     let data = await response.json();
     this.wallet = data;
   },
+
   data() {
     return {
       item1: "fishingRod",
       item2: "fishingBait",
       cijena: 0,
       wallet: [],
-      nakonkupnje: 0,
+      stanje: 0,
       error: "",
     };
   },
@@ -180,11 +206,18 @@ export default {
     },
 
     pay() {
-      if (this.cijena < this.nakonkupnje) {
-        this.nakonkupnje = this.nakonkupnje - this.cijena;
+      if (this.cijena < this.stanje) {
+        this.stanje = this.stanje - this.cijena;
       } else {
         this.error = "Nemate dovoljno novca na računu";
       }
+    },
+
+    async refresh() {
+      let response = await fetch("http://localhost:3000/wallet");
+      console.log(response);
+      let data = await response.json();
+      this.wallet = data;
     },
 
     createPost() {
@@ -201,8 +234,8 @@ export default {
     buyItem() {
       axios
         .patch("http://127.0.0.1:3000/wallet/62bc144506edc3b8727dd025", {
-          stanje: this.nakonkupnje,
-          stvar: this.nakonkupnje,
+          stanje: this.stanje,
+          stvar: this.stanje,
         })
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
