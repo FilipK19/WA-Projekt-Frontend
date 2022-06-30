@@ -27,9 +27,9 @@ const routes = [
     props: true,
   },
   {
-    path: '/shop',
-    name: 'Shop',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Shop.vue')
+    path: '/shopbuy',
+    name: 'ShopBuy',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ShopBuy.vue')
   },
   {
     path: '/fish/fishdetails/:fish',
@@ -56,6 +56,12 @@ const routes = [
     path: '/shop/buy/:item',
     name: 'BuyItem',
     component: () => import(/* webpackChunkName: "about" */ '../views/Buy.vue'),
+    props: true,
+  },
+  {
+    path: '/shoprent/',
+    name: 'ShopRent',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ShopRent.vue'),
     props: true,
   },
 ]

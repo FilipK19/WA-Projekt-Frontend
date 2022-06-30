@@ -4,7 +4,7 @@
       <v-row no-gutters>
         <v-col>
           <v-btn rounded width="350" height="300" color="#98FB98">
-            <router-link to="/shop">
+            <router-link to="/shopbuy">
               <v-img
                 height="225px"
                 width="270px"
@@ -16,13 +16,13 @@
         </v-col>
         <v-col>
           <v-btn rounded width="350" height="300" color="#98FB98">
-            <router-link to="/">
+            <router-link to="/shoprent">
               <v-img
                 height="225px"
                 width="260px"
                 src="../assets/rent.svg"
               ></v-img>
-              <v-list-item-subtitle>Buy stuff</v-list-item-subtitle>
+              <v-list-item-subtitle>Rent stuff</v-list-item-subtitle>
             </router-link>
           </v-btn>
         </v-col>
