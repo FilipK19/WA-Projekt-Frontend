@@ -1,10 +1,8 @@
 <template>
   <div>
-    {{ stanje }}
-    {{ cijena }}
     <v-container>
       <v-col>
-        <v-card width="300" height="50" color="#98FB98">
+        <v-card @change="novac" width="300" height="50" color="#98FB98">
           <v-card-title>
             <h1 v-for="w in wallet" v-bind:key="w">
               Stanje: {{ (stanje = w.stanje), }}
@@ -14,14 +12,14 @@
         </v-card>
       </v-col>
       <v-col>
-        <v-card width="300" height="25" color="#98FB98">
-          <label for="cijena">Money: </label>
-          <input type="text" id="cijena" v-model="cijena" color="#98FB98" />
+        <v-card width="400" height="25" color="#98FB98">
+          <label for="novac">Amount you want to add: </label>
+          <input type="text" id="novac" v-model="novac" color="#98FB98" />
         </v-card>
       </v-col>
       <v-col>
         <v-card
-          @click="pay(), buyItem(), refresh()"
+          @click="add(), buyItem(), refresh()"
           width="150"
           height="25"
           color="#98FB98"
@@ -161,18 +159,13 @@ import axios from "axios";
 export default {
   name: "FishingPost",
   props: ["item"],
-  async mounted() {
-    let response = await fetch("http://localhost:3000/wallet");
-    console.log(response);
-    let data = await response.json();
-    this.wallet = data;
-  },
 
   data() {
     return {
       item1: "fishingRod",
       item2: "fishingBait",
       cijena: 0,
+      novac: 0,
       wallet: [],
       stanje: 0,
       error: "",
@@ -213,6 +206,14 @@ export default {
       }
     },
 
+    add() {
+      if (this.novac > -1000) {
+        this.stanje = this.stanje - -this.novac;
+      } else {
+        this.error = "Upišite pravilan broj";
+      }
+    },
+
     async refresh() {
       let response = await fetch("http://localhost:3000/wallet");
       console.log(response);
@@ -241,6 +242,13 @@ export default {
         .catch((error) => console.log(error));
       console.log("function called");
     },
+  },
+
+  async beforeMount() {
+    let response = await fetch("http://localhost:3000/wallet");
+    console.log(response);
+    let data = await response.json();
+    this.wallet = data;
   },
 };
 </script>
