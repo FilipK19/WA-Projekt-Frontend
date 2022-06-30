@@ -45,7 +45,15 @@
               <v-card-title>15 $</v-card-title>
               <v-card-actions>
                 <v-btn
-                  @click="selectFR(), pay(), rentItem(), refresh(), rented()"
+                  @click="
+                    selectFR(),
+                      selectFR1(),
+                      pay(),
+                      rentItem(),
+                      refresh(),
+                      rented(),
+                      postRent()
+                  "
                   ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
                 >
               </v-card-actions>
@@ -62,7 +70,15 @@
               <v-card-title>25 $</v-card-title>
               <v-card-actions>
                 <v-btn
-                  @click="selectFG(), pay(), rentItem(), refresh(), rented()"
+                  @click="
+                    selectFG(),
+                      selectFG1(),
+                      pay(),
+                      rentItem(),
+                      refresh(),
+                      rented(),
+                      postRent()
+                  "
                   ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
                 >
               </v-card-actions>
@@ -83,7 +99,15 @@
               <v-card-title>10 $</v-card-title>
               <v-card-actions>
                 <v-btn
-                  @click="selectFR2(), pay(), rentItem(), refresh(), rented()"
+                  @click="
+                    selectFR(),
+                      selectFR2(),
+                      pay(),
+                      rentItem(),
+                      refresh(),
+                      rented(),
+                      postRent()
+                  "
                   ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
                 >
               </v-card-actions>
@@ -100,7 +124,15 @@
               <v-card-title>15 $</v-card-title>
               <v-card-actions>
                 <v-btn
-                  @click="selectFG2(), pay(), rentItem(), refresh(), rented()"
+                  @click="
+                    selectFG(),
+                      selectFG2(),
+                      pay(),
+                      rentItem(),
+                      refresh(),
+                      rented(),
+                      postRent()
+                  "
                   ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
                 >
               </v-card-actions>
@@ -121,7 +153,15 @@
               <v-card-title>10 $</v-card-title>
               <v-card-actions>
                 <v-btn
-                  @click="selectFR3(), pay(), rentItem(), refresh(), rented()"
+                  @click="
+                    selectFR(),
+                      selectFR3(),
+                      pay(),
+                      rentItem(),
+                      refresh(),
+                      rented(),
+                      postRent()
+                  "
                   ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
                 >
               </v-card-actions>
@@ -138,7 +178,15 @@
               <v-card-title>2 $</v-card-title>
               <v-card-actions>
                 <v-btn
-                  @click="selectFG3(), pay(), rentItem(), refresh(), rented()"
+                  @click="
+                    selectFG(),
+                      selectFG3(),
+                      pay(),
+                      rentItem(),
+                      refresh(),
+                      rented(),
+                      postRent()
+                  "
                   ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
                 >
               </v-card-actions>
@@ -159,7 +207,15 @@
               <v-card-title>5 $</v-card-title>
               <v-card-actions>
                 <v-btn
-                  @click="selectFR4(), pay(), rentItem(), refresh(), rented()"
+                  @click="
+                    selectFR(),
+                      selectFR4(),
+                      pay(),
+                      rentItem(),
+                      refresh(),
+                      rented(),
+                      postRent()
+                  "
                   ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
                 >
               </v-card-actions>
@@ -176,7 +232,15 @@
               <v-card-title>15 $</v-card-title>
               <v-card-actions>
                 <v-btn
-                  @click="selectFG4(), pay(), rentItem(), refresh(), rented()"
+                  @click="
+                    selectFG(),
+                      selectFG4(),
+                      pay(),
+                      rentItem(),
+                      refresh(),
+                      rented(),
+                      postRent()
+                  "
                   ><h4 @click="refresh()">{{ kupnja }}</h4></v-btn
                 >
               </v-card-actions>
@@ -204,33 +268,51 @@ export default {
       stanje: 0,
       error: "",
       kupnja: "Rent",
+      formData: {
+        vrsta: "",
+        ime: "",
+      },
     };
   },
   methods: {
     selectFR() {
+      this.formData.vrsta = "pecaljka";
+    },
+    selectFR1() {
       this.cijena = 15;
+      this.formData.ime = "Sougayilang";
     },
     selectFR2() {
       this.cijena = 10;
+      this.formData.ime = "RAD";
     },
     selectFR3() {
       this.cijena = 10;
+      this.formData.ime = "PLUSINNO";
     },
     selectFR4() {
       this.cijena = 5;
+      this.formData.ime = "Zebco";
     },
 
     selectFG() {
+      this.formData.vrsta = "gear";
+    },
+    selectFG1() {
       this.cijena = 25;
+      this.formData.ime = "outfit";
     },
     selectFG2() {
       this.cijena = 15;
+      this.formData.ime = "backpack";
     },
     selectFG3() {
       this.cijena = 2;
+      this.formData.ime = "net";
     },
     selectFG4() {
       this.cijena = 10;
+      this.formData.ime = "chair";
     },
 
     rented() {
@@ -273,6 +355,14 @@ export default {
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
       console.log("function called");
+    },
+    postRent() {
+      axios
+        .post("http://localhost:3000/rent/add", this.formData)
+        .then((response) => console.log(response))
+        .catch((error) => console.log(error));
+      console.log("function called");
+      this.error = "";
     },
   },
 
