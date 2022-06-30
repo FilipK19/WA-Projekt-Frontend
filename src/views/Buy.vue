@@ -176,7 +176,7 @@
               <h4>
                 <v-img
                   height="200px"
-                  width="335px"
+                  width="300px"
                   src="../shop/net.png"
                 ></v-img>
               </h4>

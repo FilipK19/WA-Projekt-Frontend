@@ -34,6 +34,16 @@
               />
             </div>
             <v-divider class="mx-4"></v-divider>
+            <div>
+              <label for="lokacija">Napišite koliko teška je bila: </label>
+              <input
+                STYLE="background-color: #00FA9A;"
+                type="text"
+                id="tezina"
+                v-model="formData.tezina"
+              />
+            </div>
+            <v-divider class="mx-4"></v-divider>
             <v-btn @click="createPost()" rounded color="#00FA9A"
               >Create Post</v-btn
             >
@@ -55,6 +65,7 @@ export default {
         vrsta: "",
         voda: "",
         lokacija: "",
+        tezina: "",
       },
       error: "",
     };
@@ -64,7 +75,8 @@ export default {
       if (
         this.formData.vrsta != "" &&
         this.formData.voda != "" &&
-        this.formData.lokacija != ""
+        this.formData.lokacija != "" &&
+        this.formData.tezina != ""
       ) {
         axios
           .post("http://localhost:3000/upecane/ribe", this.formData)

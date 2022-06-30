@@ -4,7 +4,8 @@
       <h3 v-if="f.vrsta != undefined">
         {{ "Ime: " + f.vrsta + " | " }}
         {{ "Vrsta: " + f.voda + " | " }}
-        {{ "Mjesto: " + f.lokacija }}
+        {{ "Mjesto: " + f.lokacija + " | " }}
+        {{ "Težina: " + f.tezina + " grama" }}
       </h3>
     </h3>
   </div>
