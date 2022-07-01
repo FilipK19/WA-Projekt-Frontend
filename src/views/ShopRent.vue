@@ -44,6 +44,20 @@
             </v-btn>
           </router-link>
         </v-col>
+        <v-col>
+          <router-link :to="'/shoprent/return'">
+            <v-btn rounded x-large width="500" height="150" color="#98FB98">
+              <v-img
+                height="150px"
+                width="150px"
+                src="../shop/return.svg"
+              ></v-img>
+              <v-list-item-subtitle style="color: #228b22"
+                >Return rented items</v-list-item-subtitle
+              >
+            </v-btn>
+          </router-link>
+        </v-col>
       </v-col>
     </v-container>
   </div>

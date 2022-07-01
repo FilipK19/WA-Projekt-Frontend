@@ -62,13 +62,16 @@ const routes = [
     path: '/shop/rent/:item',
     name: 'RentItem',
     component: () => import(/* webpackChunkName: "about" */ '../views/Rent.vue'),
-    props: true,
   },
   {
-    path: '/shoprent/',
+    path: '/shoprent',
     name: 'ShopRent',
     component: () => import(/* webpackChunkName: "about" */ '../views/ShopRent.vue'),
-    props: true,
+  },
+  {
+    path: '/shoprent/return',
+    name: 'ReturnRented',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Return.vue'),
   },
 ]
 
