@@ -39,7 +39,7 @@
                 src="../assets/fish.svg"
               ></v-img>
               <v-list-item-subtitle style="color: #228b22"
-                >Your fish</v-list-item-subtitle
+                >Fish database</v-list-item-subtitle
               >
             </router-link>
           </v-btn>
