@@ -1,14 +1,24 @@
 <template>
   <div>
-    {{ toRent }}
-    <h1>Items to return:</h1>
-    <h1 v-for="r in toRent" v-bind:key="r">
-      <v-btn @click="item = r._id">
-        {{ r.ime }}
-      </v-btn>
-    </h1>
-    <h1>{{ item }}</h1>
-    <h2><v-btn @click="returnItem()">Pray</v-btn></h2>
+    <v-container>
+      <v-col>
+        <h1>Items to return:</h1>
+        <h1 v-for="r in toRent" v-bind:key="r">
+          <v-btn
+            color="#98FB98"
+            @click="
+              (item = r._id), (name = r.ime), (status = ' has been selected')
+            "
+          >
+            {{ r.ime }}
+          </v-btn>
+        </h1>
+      </v-col>
+      <v-col>
+        <h1>{{ name + status }}</h1>
+        <h2><v-btn @click="returnItem()">Return selected item</v-btn></h2>
+      </v-col>
+    </v-container>
   </div>
 </template>
 
@@ -27,6 +37,8 @@ export default {
     return {
       toRent: [],
       item: "",
+      name: "",
+      status: "",
     };
   },
   methods: {

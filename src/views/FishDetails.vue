@@ -161,8 +161,6 @@ export default {
   data() {
     return {
       fishData: [],
-      picture: "",
-      test1: "../FishPictures/pastrva.jpg",
     };
   },
 };
