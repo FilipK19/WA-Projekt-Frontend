@@ -1,24 +1,19 @@
-# prototip
+### How to download the repository and run the Backend locally:
 
-## Project setup
-```
-yarn install
-```
+1. Clone the repository:
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+   ```
+   git clone https://github.com/FilipK19/WA-Projekt-Frontend.git
+   ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+2. Install NPM packages:
 
-### Lints and fixes files
-```
-yarn lint
-```
+   ```
+   npm install
+   ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+3. Run the aplication locally on port 5000:
+
+   ```
+   npm run serve
+   ```
