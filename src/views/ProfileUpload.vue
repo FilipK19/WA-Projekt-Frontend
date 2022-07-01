@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ formData }}
     <v-container>
       <v-card style="color: #228b22" width="800" height="150" color="#98FB98">
         <form @submit.prevent="createPost">
