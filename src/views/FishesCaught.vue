@@ -17,7 +17,9 @@ export default {
   name: "FishDetails",
   props: ["fish"],
   async mounted() {
-    let response = await fetch("http://localhost:3000/caughtfish");
+    let response = await fetch(
+      "https://wa-projekt-backend.herokuapp.com/caughtfish"
+    );
     console.log(response);
     let data = await response.json();
     this.fishData = data;

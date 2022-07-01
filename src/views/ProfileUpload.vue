@@ -81,7 +81,10 @@ export default {
         this.formData.weight != 0
       ) {
         axios
-          .post("http://localhost:3000/caughtfish", this.formData)
+          .post(
+            "https://wa-projekt-backend.herokuapp.com/caughtfish",
+            this.formData
+          )
           .then((response) => console.log(response))
           .catch((error) => console.log(error));
         console.log("function called");

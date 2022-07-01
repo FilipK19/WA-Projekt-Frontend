@@ -5,7 +5,7 @@
     <v-btn @click="vrsta2()" rounded color="#98FB98"> Saltwater</v-btn>
     <h3 style="color: #228b22" v-for="f in fishData" v-bind:key="f">
       <h3 v-if="f.water == vrstaRibe">
-        {{ f.vrsta }}
+        {{ f.type }}
       </h3>
     </h3>
   </div>
@@ -15,7 +15,9 @@
 export default {
   name: "FishCategory",
   async mounted() {
-    let response = await fetch("http://localhost:3000/fishdb");
+    let response = await fetch(
+      "https://wa-projekt-backend.herokuapp.com/fishdb"
+    );
     console.log(response);
     let data = await response.json();
     this.fishData = data;

@@ -340,7 +340,9 @@ export default {
     },
 
     async refresh() {
-      let response = await fetch("http://localhost:3000/wallet");
+      let response = await fetch(
+        "https://wa-projekt-backend.herokuapp.com/wallet"
+      );
       console.log(response);
       let data = await response.json();
       this.wallet = data;
@@ -348,16 +350,22 @@ export default {
 
     rentItem() {
       axios
-        .patch("http://127.0.0.1:3000/wallet/62be56a225ac396519939ddd", {
-          status: this.stanje,
-        })
+        .patch(
+          "https://wa-projekt-backend.herokuapp.com/wallet/62be56a225ac396519939ddd",
+          {
+            status: this.stanje,
+          }
+        )
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
       console.log("function called");
     },
     postRent() {
       axios
-        .post("http://localhost:3000/rent/add", this.formData)
+        .post(
+          "https://wa-projekt-backend.herokuapp.com/rent/add",
+          this.formData
+        )
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
       console.log("function called");
@@ -366,7 +374,9 @@ export default {
   },
 
   async beforeMount() {
-    let response = await fetch("http://localhost:3000/wallet");
+    let response = await fetch(
+      "https://wa-projekt-backend.herokuapp.com/wallet"
+    );
     console.log(response);
     let data = await response.json();
     this.wallet = data;

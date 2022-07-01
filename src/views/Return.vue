@@ -42,13 +42,15 @@ export default {
   methods: {
     returnItem() {
       axios
-        .delete("http://127.0.0.1:3000/rent/" + this.item)
+        .delete("https://wa-projekt-backend.herokuapp.com/rent/" + this.item)
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
       console.log("function called");
     },
     async refresh() {
-      let response = await fetch("http://localhost:3000/rent/");
+      let response = await fetch(
+        "https://wa-projekt-backend.herokuapp.com/rent/"
+      );
       console.log(response);
       let data = await response.json();
       this.toRent = data;
@@ -56,7 +58,9 @@ export default {
   },
 
   async beforeMount() {
-    let response = await fetch("http://localhost:3000/rent/");
+    let response = await fetch(
+      "https://wa-projekt-backend.herokuapp.com/rent/"
+    );
     console.log(response);
     let data = await response.json();
     this.toRent = data;
