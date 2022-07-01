@@ -85,7 +85,7 @@ export default {
           .then((response) => console.log(response))
           .catch((error) => console.log(error));
         console.log("function called");
-        this.error = "";
+        this.error = "Fish added succesfuly";
       } else {
         this.error = "All fields must be filled!";
       }

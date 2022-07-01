@@ -56,7 +56,7 @@
           <h3 style="color: #228b22">
             <h2>Fish in database:</h2>
             <h3 v-for="f in fishData" v-bind:key="f">
-              {{ f.vrsta }}
+              {{ f.type }}
             </h3>
           </h3>
         </v-col>

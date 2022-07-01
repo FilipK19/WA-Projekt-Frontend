@@ -341,7 +341,7 @@ export default {
 
     buyItem() {
       axios
-        .patch("http://127.0.0.1:3000/wallet/62bc144506edc3b8727dd025", {
+        .patch("http://127.0.0.1:3000/wallet/62be56a225ac396519939ddd", {
           status: this.stanje,
         })
         .then((response) => console.log(response))

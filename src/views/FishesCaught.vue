@@ -1,11 +1,11 @@
 <template>
   <div>
     <h3 style="color: #228b22" v-for="f in fishData" v-bind:key="f">
-      <h3 v-if="f.vrsta != undefined">
-        {{ "Ime: " + f.type + " | " }}
-        {{ "Vrsta: " + f.water + " | " }}
-        {{ "Mjesto: " + f.location + " | " }}
-        {{ "Težina: " + f.weight + " grama" }}
+      <h3 v-if="f.type != undefined">
+        {{ "Name: " + f.type + " | " }}
+        {{ "Type: " + f.water + " | " }}
+        {{ "Location: " + f.location + " | " }}
+        {{ "Weight: " + f.weight + " grams" }}
       </h3>
     </h3>
   </div>

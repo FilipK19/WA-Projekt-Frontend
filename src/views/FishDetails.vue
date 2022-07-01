@@ -2,9 +2,9 @@
   <div class="fish">
     <v-card color="#98FB98">
       <h3 style="color: #228b22" v-for="f in fishData" v-bind:key="f">
-        <h3 v-if="fish == f.vrsta">
+        <h3 v-if="fish == f.type">
           {{ "Fish name: " + f.type }} <br />
-          {{ "VFish type: " + f.water }} <br />
+          {{ "Fish type: " + f.water }} <br />
           {{ "Locations to fish: " + f.location }}
         </h3>
       </h3>
@@ -44,7 +44,7 @@
         src="../FishPictures/cipal.jpg"
       ></v-img>
     </h2>
-    <h2 v-if="fish == 'Škrapina'">
+    <h2 v-if="fish == 'Škarpina'">
       <v-img
         height="390px"
         width="860px"

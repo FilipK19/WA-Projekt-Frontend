@@ -5,7 +5,7 @@
         <v-card width="300" height="50" color="#98FB98" style="color: #228b22">
           <v-card-title>
             <h1 v-for="w in wallet" v-bind:key="w">
-              tatus: {{ (stanje = w.status), }}
+              Status: {{ (stanje = w.status), }}
             </h1>
             {{ error }}
           </v-card-title>
@@ -276,43 +276,43 @@ export default {
   },
   methods: {
     selectFR() {
-      this.formData.vrsta = "pecaljka";
+      this.formData.type = "pecaljka";
     },
     selectFR1() {
       this.cijena = 15;
-      this.formData.ime = "Sougayilang fishing rod";
+      this.formData.name = "Sougayilang fishing rod";
     },
     selectFR2() {
       this.cijena = 10;
-      this.formData.ime = "RAD fishing rod";
+      this.formData.name = "RAD fishing rod";
     },
     selectFR3() {
       this.cijena = 10;
-      this.formData.ime = "PLUSINNO fishing rod";
+      this.formData.name = "PLUSINNO fishing rod";
     },
     selectFR4() {
       this.cijena = 5;
-      this.formData.ime = "Zebco fishing rod";
+      this.formData.name = "Zebco fishing rod";
     },
 
     selectFG() {
-      this.formData.vrsta = "gear";
+      this.formData.type = "gear";
     },
     selectFG1() {
       this.cijena = 25;
-      this.formData.ime = "Fishing Outfit";
+      this.formData.name = "Fishing Outfit";
     },
     selectFG2() {
       this.cijena = 15;
-      this.formData.ime = "Fishing Backpack";
+      this.formData.name = "Fishing Backpack";
     },
     selectFG3() {
       this.cijena = 2;
-      this.formData.ime = "Fishing Net";
+      this.formData.name = "Fishing Net";
     },
     selectFG4() {
       this.cijena = 10;
-      this.formData.ime = "Fishing Chair";
+      this.formData.name = "Fishing Chair";
     },
 
     rented() {
@@ -348,7 +348,7 @@ export default {
 
     rentItem() {
       axios
-        .patch("http://127.0.0.1:3000/wallet/62bc144506edc3b8727dd025", {
+        .patch("http://127.0.0.1:3000/wallet/62be56a225ac396519939ddd", {
           status: this.stanje,
         })
         .then((response) => console.log(response))
