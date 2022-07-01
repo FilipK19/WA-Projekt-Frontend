@@ -280,19 +280,19 @@ export default {
     },
     selectFR1() {
       this.cijena = 15;
-      this.formData.ime = "Sougayilang";
+      this.formData.ime = "Sougayilang fishing rod";
     },
     selectFR2() {
       this.cijena = 10;
-      this.formData.ime = "RAD";
+      this.formData.ime = "RAD fishing rod";
     },
     selectFR3() {
       this.cijena = 10;
-      this.formData.ime = "PLUSINNO";
+      this.formData.ime = "PLUSINNO fishing rod";
     },
     selectFR4() {
       this.cijena = 5;
-      this.formData.ime = "Zebco";
+      this.formData.ime = "Zebco fishing rod";
     },
 
     selectFG() {
@@ -300,19 +300,19 @@ export default {
     },
     selectFG1() {
       this.cijena = 25;
-      this.formData.ime = "outfit";
+      this.formData.ime = "Fishing Outfit";
     },
     selectFG2() {
       this.cijena = 15;
-      this.formData.ime = "backpack";
+      this.formData.ime = "Fishing Backpack";
     },
     selectFG3() {
       this.cijena = 2;
-      this.formData.ime = "net";
+      this.formData.ime = "Fishing Net";
     },
     selectFG4() {
       this.cijena = 10;
-      this.formData.ime = "chair";
+      this.formData.ime = "Fishing Chair";
     },
 
     rented() {
