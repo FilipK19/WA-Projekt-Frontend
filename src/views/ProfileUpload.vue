@@ -47,7 +47,7 @@
             </div>
             <v-divider class="mx-4"></v-divider>
             <v-btn @click="createPost()" rounded color="#00FA9A"
-              >Create Post</v-btn
+              >Upload data</v-btn
             >
           </h2>
           <h2>{{ error }}</h2>

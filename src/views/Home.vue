@@ -25,7 +25,7 @@
                 src="../assets/store.svg"
               ></v-img>
               <v-list-item-subtitle style="color: #228b22"
-                >Buy stuff</v-list-item-subtitle
+                >Shop</v-list-item-subtitle
               >
             </router-link>
           </v-btn>

@@ -10,7 +10,7 @@
                 width="270px"
                 src="../assets/buy.svg"
               ></v-img>
-              <v-list-item-subtitle>Buy stuff</v-list-item-subtitle>
+              <v-list-item-subtitle>Buy items</v-list-item-subtitle>
             </router-link>
           </v-btn>
         </v-col>
@@ -22,7 +22,7 @@
                 width="260px"
                 src="../assets/rent.svg"
               ></v-img>
-              <v-list-item-subtitle>Rent stuff</v-list-item-subtitle>
+              <v-list-item-subtitle>Rent items</v-list-item-subtitle>
             </router-link>
           </v-btn>
         </v-col>
