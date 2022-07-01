@@ -2,10 +2,10 @@
   <div>
     <v-container>
       <v-col>
-        <v-card width="300" height="50" color="#98FB98" style="color: #228b22">
+        <v-card width="310" height="50" color="#98FB98" style="color: #228b22">
           <v-card-title>
             <h1 v-for="w in wallet" v-bind:key="w">
-              Status: {{ (stanje = w.status), }}
+              Status: {{ (stanje = w.status), }} $
             </h1>
             {{ error }}
           </v-card-title>
@@ -319,16 +319,16 @@ export default {
         this.stanje = this.stanje - this.cijena;
         this.error = "";
       } else {
-        this.error = "Nemate dovoljno novca na računu";
+        this.error = "You dont have enough money";
       }
     },
 
     add() {
-      if (this.novac > -1000) {
+      if (this.novac > 0) {
         this.stanje = this.stanje - -this.novac;
         this.error = "";
       } else {
-        this.error = "Upišite pravilan broj";
+        this.error = "Enter a correct number";
       }
     },
 
