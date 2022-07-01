@@ -7,10 +7,10 @@
           <v-btn
             color="#98FB98"
             @click="
-              (item = r._id), (name = r.ime), (status = ' has been selected')
+              (item = r._id), (name = r.name), (status = ' has been selected')
             "
           >
-            {{ r.ime }}
+            {{ r.name }}
           </v-btn>
         </h1>
       </v-col>

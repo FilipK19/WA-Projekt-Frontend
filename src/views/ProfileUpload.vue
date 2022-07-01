@@ -1,11 +1,11 @@
 <template>
   <div>
     <v-container>
-      <v-card style="color: #228b22" width="650" height="150" color="#98FB98">
+      <v-card style="color: #228b22" width="800" height="150" color="#98FB98">
         <form @submit.prevent="createPost">
           <h2>
             <div>
-              <label for="vrsta">Napišite ime upecane ribe: </label>
+              <label for="vrsta">Type the name of the fish you caught: </label>
               <input
                 STYLE="background-color: #00FA9A;"
                 type="text"
@@ -15,7 +15,7 @@
             </div>
             <v-divider class="mx-4"></v-divider>
             <div>
-              <label for="voda">Napišite vrstu upecane ribe: </label>
+              <label for="voda">Type the type of fish you caught: </label>
               <input
                 STYLE="background-color: #00FA9A;"
                 type="text"
@@ -25,7 +25,7 @@
             </div>
             <v-divider class="mx-4"></v-divider>
             <div>
-              <label for="lokacija">Napišite gdje ste ju upecali: </label>
+              <label for="lokacija">Type where you caught it: </label>
               <input
                 STYLE="background-color: #00FA9A;"
                 type="text"
@@ -35,7 +35,9 @@
             </div>
             <v-divider class="mx-4"></v-divider>
             <div>
-              <label for="lokacija">Napišite koliko teška je bila: </label>
+              <label for="lokacija"
+                >What weight was the fish you caught:
+              </label>
               <input
                 STYLE="background-color: #00FA9A;"
                 type="text"
@@ -62,10 +64,10 @@ export default {
   data() {
     return {
       formData: {
-        vrsta: "",
-        voda: "",
-        lokacija: "",
-        tezina: 0,
+        type: "",
+        water: "",
+        location: "",
+        weight: 0,
       },
       error: "",
     };
@@ -73,19 +75,19 @@ export default {
   methods: {
     createPost() {
       if (
-        this.formData.vrsta != "" &&
-        this.formData.voda != "" &&
-        this.formData.lokacija != "" &&
-        this.formData.tezina != 0
+        this.formData.type != "" &&
+        this.formData.water != "" &&
+        this.formData.location != "" &&
+        this.formData.weight != 0
       ) {
         axios
-          .post("http://localhost:3000/upecane/ribe", this.formData)
+          .post("http://localhost:3000/caughtfish", this.formData)
           .then((response) => console.log(response))
           .catch((error) => console.log(error));
         console.log("function called");
         this.error = "";
       } else {
-        this.error = "Sva polja moraju biti puna";
+        this.error = "All fields must be filled!";
       }
     },
   },

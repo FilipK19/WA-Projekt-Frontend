@@ -5,7 +5,7 @@
         <v-card width="300" height="50" color="#98FB98" style="color: #228b22">
           <v-card-title>
             <h1 v-for="w in wallet" v-bind:key="w">
-              Stanje: {{ (stanje = w.stanje), }}
+              tatus: {{ (stanje = w.status), }}
             </h1>
             {{ error }}
           </v-card-title>
@@ -269,8 +269,8 @@ export default {
       error: "",
       kupnja: "Rent",
       formData: {
-        vrsta: "",
-        ime: "",
+        type: "",
+        name: "",
       },
     };
   },
@@ -326,7 +326,7 @@ export default {
         this.stanje = this.stanje - this.cijena;
         this.error = "";
       } else {
-        this.error = "Nemate dovoljno novca na računu";
+        this.error = "You dont have enough money in your account";
       }
     },
 
@@ -335,7 +335,7 @@ export default {
         this.stanje = this.stanje - -this.novac;
         this.error = "";
       } else {
-        this.error = "Upišite pravilan broj";
+        this.error = "Enter a walid number";
       }
     },
 
@@ -349,8 +349,7 @@ export default {
     rentItem() {
       axios
         .patch("http://127.0.0.1:3000/wallet/62bc144506edc3b8727dd025", {
-          stanje: this.stanje,
-          stvar: this.stanje,
+          status: this.stanje,
         })
         .then((response) => console.log(response))
         .catch((error) => console.log(error));

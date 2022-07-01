@@ -16,7 +16,9 @@
             </h4>
           </v-card>
           <h2 class="text-left">
-            <h3 style="color: #228b22">Broj upecanih riba: {{ i / 101 }}</h3>
+            <h3 style="color: #228b22">
+              Number of fishes caught: {{ i / 101 }}
+            </h3>
           </h2>
         </v-col>
         <v-col>
@@ -53,7 +55,7 @@
 export default {
   name: "Profile",
   async mounted() {
-    let response = await fetch("http://localhost:3000/upecane/ribe");
+    let response = await fetch("http://localhost:3000/caughtfish");
     console.log(response);
     let data = await response.json();
     this.upecano = data;

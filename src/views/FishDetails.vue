@@ -3,9 +3,9 @@
     <v-card color="#98FB98">
       <h3 style="color: #228b22" v-for="f in fishData" v-bind:key="f">
         <h3 v-if="fish == f.vrsta">
-          {{ "Ime Ribe: " + f.vrsta }} <br />
-          {{ "Vrsta Ribe: " + f.voda }} <br />
-          {{ "Lokacije za pecat: " + f.lokacija }}
+          {{ "Fish name: " + f.type }} <br />
+          {{ "VFish type: " + f.water }} <br />
+          {{ "Locations to fish: " + f.location }}
         </h3>
       </h3>
     </v-card>
@@ -153,7 +153,7 @@ export default {
   name: "FishDetails",
   props: ["fish"],
   async mounted() {
-    let response = await fetch("http://localhost:3000/test");
+    let response = await fetch("http://localhost:3000/fishdb");
     console.log(response);
     let data = await response.json();
     this.fishData = data;
