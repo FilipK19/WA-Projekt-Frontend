@@ -1,4 +1,4 @@
-### How to download the repository and run the Backend locally:
+### How to download the repository and run the Frontend locally:
 
 1. Clone the repository:
 
@@ -12,7 +12,7 @@
    npm install
    ```
 
-3. Run the aplication locally on port 5000:
+3. Run the aplication locally:
 
    ```
    npm run serve
