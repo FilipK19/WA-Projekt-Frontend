@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ formData }}
     <v-container>
       <v-card style="color: #228b22" width="800" height="150" color="#98FB98">
         <form @submit.prevent="createPost">
@@ -10,7 +11,7 @@
                 STYLE="background-color: #00FA9A;"
                 type="text"
                 id="vrsta"
-                v-model="formData.vrsta"
+                v-model="formData.type"
               />
             </div>
             <v-divider class="mx-4"></v-divider>
@@ -20,7 +21,7 @@
                 STYLE="background-color: #00FA9A;"
                 type="text"
                 id="voda"
-                v-model="formData.voda"
+                v-model="formData.water"
               />
             </div>
             <v-divider class="mx-4"></v-divider>
@@ -30,7 +31,7 @@
                 STYLE="background-color: #00FA9A;"
                 type="text"
                 id="lokacija"
-                v-model="formData.lokacija"
+                v-model="formData.location"
               />
             </div>
             <v-divider class="mx-4"></v-divider>
@@ -42,7 +43,7 @@
                 STYLE="background-color: #00FA9A;"
                 type="text"
                 id="tezina"
-                v-model="formData.tezina"
+                v-model="formData.weight"
               />
             </div>
             <v-divider class="mx-4"></v-divider>
