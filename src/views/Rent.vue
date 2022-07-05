@@ -331,7 +331,7 @@ export default {
     },
 
     add() {
-      if (this.novac > -1000) {
+      if (this.novac > 0) {
         this.stanje = this.stanje - -this.novac;
         this.error = "";
       } else {
