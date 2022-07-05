@@ -11,15 +11,9 @@
             ></v-img>
             <h2 style="color: #228b22">Ivan Ivanić</h2>
             <br />
-            <h4 v-for="u in upecano" v-bind:key="u" style="color: #228b22">
-              {{ i++ }}
-            </h4>
+            <h4 v-for="u in upecano" v-bind:key="u" style="color: #228b22"></h4>
           </v-card>
-          <h2 class="text-left">
-            <h3 style="color: #228b22">
-              Number of fishes caught: {{ i / 101 }}
-            </h3>
-          </h2>
+          <h2 class="text-left"></h2>
         </v-col>
         <v-col>
           <router-link :to="'/profile/upload/'">
@@ -54,20 +48,8 @@
 <script>
 export default {
   name: "Profile",
-  async mounted() {
-    let response = await fetch(
-      "https://wa-projekt-backend.herokuapp.com/caughtfish"
-    );
-    console.log(response);
-    let data = await response.json();
-    this.upecano = data;
-  },
   data() {
-    return {
-      profil: [],
-      upecano: [],
-      i: 0,
-    };
+    return {};
   },
   methods: {},
 };

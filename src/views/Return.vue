@@ -27,43 +27,25 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "Rent",
 
   data() {
     return {
-      toRent: [],
+      toRent: [
+        {
+          type: "gear",
+          name: "Fishing Chair",
+        },
+        {
+          type: "gear",
+          name: "Fishing Chair",
+        },
+      ],
       item: "",
       name: "",
       status: "",
     };
-  },
-  methods: {
-    returnItem() {
-      axios
-        .delete("https://wa-projekt-backend.herokuapp.com/rent/" + this.item)
-        .then((response) => console.log(response))
-        .catch((error) => console.log(error));
-      console.log("function called");
-    },
-    async refresh() {
-      let response = await fetch(
-        "https://wa-projekt-backend.herokuapp.com/rent/"
-      );
-      console.log(response);
-      let data = await response.json();
-      this.toRent = data;
-    },
-  },
-
-  async beforeMount() {
-    let response = await fetch(
-      "https://wa-projekt-backend.herokuapp.com/rent/"
-    );
-    console.log(response);
-    let data = await response.json();
-    this.toRent = data;
   },
 };
 </script>

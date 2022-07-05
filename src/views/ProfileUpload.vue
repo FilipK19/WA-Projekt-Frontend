@@ -58,7 +58,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "ProfilUpload",
   data() {
@@ -80,15 +79,8 @@ export default {
         this.formData.location != "" &&
         this.formData.weight != 0
       ) {
-        axios
-          .post(
-            "https://wa-projekt-backend.herokuapp.com/caughtfish",
-            this.formData
-          )
-          .then((response) => console.log(response))
-          .catch((error) => console.log(error));
-        console.log("function called");
         this.error = "Fish added succesfuly";
+        console.log(this.formData);
       } else {
         this.error = "All fields must be filled!";
       }

@@ -152,14 +152,7 @@
 export default {
   name: "FishDetails",
   props: ["fish"],
-  async mounted() {
-    let response = await fetch(
-      "https://wa-projekt-backend.herokuapp.com/fishdb"
-    );
-    console.log(response);
-    let data = await response.json();
-    this.fishData = data;
-  },
+  async mounted() {},
   data() {
     return {
       fishData: [],

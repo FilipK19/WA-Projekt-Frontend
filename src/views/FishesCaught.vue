@@ -16,17 +16,28 @@
 export default {
   name: "FishDetails",
   props: ["fish"],
-  async mounted() {
-    let response = await fetch(
-      "https://wa-projekt-backend.herokuapp.com/caughtfish"
-    );
-    console.log(response);
-    let data = await response.json();
-    this.fishData = data;
-  },
   data() {
     return {
-      fishData: [],
+      fishData: [
+        {
+          type: "Trilja",
+          water: "Saltwater",
+          location: "Istra",
+          weight: 200,
+        },
+        {
+          type: "Škarpina",
+          water: "Saltwater",
+          location: "Istra",
+          weight: 400,
+        },
+        {
+          type: "Pastrva",
+          water: "Freshwater",
+          location: "Continent",
+          weight: 300,
+        },
+      ],
     };
   },
 };

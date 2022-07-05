@@ -253,7 +253,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "Rent",
   props: ["item"],
@@ -264,7 +263,7 @@ export default {
       item2: "fishingGear",
       cijena: 0,
       novac: 0,
-      wallet: [],
+      wallet: [{ status: 200 }],
       stanje: 0,
       error: "",
       kupnja: "Rent",
@@ -331,55 +330,13 @@ export default {
     },
 
     add() {
-      if (this.novac > -1000) {
+      if (this.novac > 0) {
         this.stanje = this.stanje - -this.novac;
         this.error = "";
       } else {
         this.error = "Enter a walid number";
       }
     },
-
-    async refresh() {
-      let response = await fetch(
-        "https://wa-projekt-backend.herokuapp.com/wallet"
-      );
-      console.log(response);
-      let data = await response.json();
-      this.wallet = data;
-    },
-
-    rentItem() {
-      axios
-        .patch(
-          "https://wa-projekt-backend.herokuapp.com/wallet/62be56a225ac396519939ddd",
-          {
-            status: this.stanje,
-          }
-        )
-        .then((response) => console.log(response))
-        .catch((error) => console.log(error));
-      console.log("function called");
-    },
-    postRent() {
-      axios
-        .post(
-          "https://wa-projekt-backend.herokuapp.com/rent/add",
-          this.formData
-        )
-        .then((response) => console.log(response))
-        .catch((error) => console.log(error));
-      console.log("function called");
-      this.error = "";
-    },
-  },
-
-  async beforeMount() {
-    let response = await fetch(
-      "https://wa-projekt-backend.herokuapp.com/wallet"
-    );
-    console.log(response);
-    let data = await response.json();
-    this.wallet = data;
   },
 };
 </script>

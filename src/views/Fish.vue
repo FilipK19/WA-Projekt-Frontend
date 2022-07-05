@@ -68,14 +68,6 @@
 <script>
 export default {
   name: "Fish",
-  async mounted() {
-    let response = await fetch(
-      "https://wa-projekt-backend.herokuapp.com/fishdb"
-    );
-    console.log(response);
-    let data = await response.json();
-    this.fishData = data;
-  },
   components: {},
 
   data() {
@@ -84,7 +76,108 @@ export default {
       randomNumber: "",
       ranFish: "",
       rand: "Pastrva",
-      fishData: [],
+      fishData: [
+        {
+          type: "Pastrva",
+          water: "Freshwater",
+          location: "Continent",
+        },
+        {
+          type: "Šaran",
+          water: "Freshwater",
+          location: "Continent",
+        },
+        {
+          type: "Mladica",
+          water: "Freshwater",
+          location: "Continent",
+        },
+        {
+          type: "Lipljen",
+          water: "Freshwater",
+          location: "Continent",
+        },
+        {
+          type: "Kečiga",
+          water: "Freshwater",
+          location: "Continent",
+        },
+        {
+          type: "Štuka",
+          water: "Freshwater",
+          location: "Continent",
+        },
+        {
+          type: "Smuđ",
+          water: "Freshwater",
+          location: "Continent",
+        },
+        {
+          type: "Som",
+          water: "Freshwater",
+          location: "Continent",
+        },
+        {
+          type: "Špar",
+          water: "Saltwater",
+          location: "Middle Dalmatia",
+        },
+        {
+          type: "Tuna",
+          water: "Saltwater",
+          location: "Middle Dalmatia",
+        },
+        {
+          type: "Morska Mačka",
+          water: "Saltwater",
+          location: "Kvarner",
+        },
+        {
+          type: "Skuša",
+          water: "Saltwater",
+          location: "Kvarner",
+        },
+        {
+          type: "Ugor",
+          water: "Saltwater",
+          location: "Istra",
+        },
+        {
+          type: "Arbun",
+          water: "Saltwater",
+          location: "Istra",
+        },
+        {
+          type: "Trilja",
+          water: "Saltwater",
+          location: "Istra, South Dalmatia",
+        },
+        {
+          type: "Škarpina",
+          water: "Saltwater",
+          location: "Istra, Kvarner, South Dalmatia",
+        },
+        {
+          type: "Orada",
+          water: "Saltwater",
+          location: "Istra, Kvarner, South Dalmatia",
+        },
+        {
+          type: "Brancin",
+          water: "Saltwater",
+          location: "Istra, Kvarner, South Dalmatia",
+        },
+        {
+          type: "Cipal",
+          water: "Saltwater",
+          location: "Istra, South Dalmatia",
+        },
+        {
+          type: "Zubatac",
+          water: "Saltwater",
+          location: "Istra, South Dalmatia",
+        },
+      ],
     };
   },
   methods: {

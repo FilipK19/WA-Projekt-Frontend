@@ -250,7 +250,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "Buy",
   props: ["item"],
@@ -262,7 +261,7 @@ export default {
       item3: "fishingGear",
       cijena: 0,
       novac: 0,
-      wallet: [],
+      wallet: [{ status: 100 }],
       stanje: 0,
       error: "",
       kupnja: "Purchase",
@@ -331,37 +330,6 @@ export default {
         this.error = "Enter a correct number";
       }
     },
-
-    async refresh() {
-      let response = await fetch(
-        "https://wa-projekt-backend.herokuapp.com/wallet"
-      );
-      console.log(response);
-      let data = await response.json();
-      this.wallet = data;
-    },
-
-    buyItem() {
-      axios
-        .patch(
-          "https://wa-projekt-backend.herokuapp.com/wallet/62be56a225ac396519939ddd",
-          {
-            status: this.stanje,
-          }
-        )
-        .then((response) => console.log(response))
-        .catch((error) => console.log(error));
-      console.log("function called");
-    },
-  },
-
-  async beforeMount() {
-    let response = await fetch(
-      "https://wa-projekt-backend.herokuapp.com/wallet"
-    );
-    console.log(response);
-    let data = await response.json();
-    this.wallet = data;
   },
 };
 </script>
